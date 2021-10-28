@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class KerioApiSocket | Kerio APIs Client Library for PHP 1.4.0.234</title>
+
+	<script type="text/javascript" src="resources/combined.js?1876494839"></script>
+	<script type="text/javascript" src="elementlist.js?4118590145"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Kerio APIs Client Library for PHP 1.4.0.234</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" class="search-query" placeholder="Search" />
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-KerioApi.html">KerioApi</a></li>
+				<li class="active"><a href="class-KerioApiSocket.html">KerioApiSocket</a></li>
+				<li><a href="class-KerioConnectApi.html">KerioConnectApi</a></li>
+				<li><a href="class-KerioControlApi.html">KerioControlApi</a></li>
+				<li><a href="class-KerioDirectoryApi.html">KerioDirectoryApi</a></li>
+				<li><a href="class-KerioOperatorApi.html">KerioOperatorApi</a></li>
+				<li><a href="class-KerioWorkspaceApi.html">KerioWorkspaceApi</a></li>
+				<li><a href="class-SamepageApi.html">SamepageApi</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-KerioApiInterface.html">KerioApiInterface</a></li>
+				<li><a href="class-KerioApiSocketInterface.html">KerioApiSocketInterface</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-KerioApiException.html">KerioApiException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class KerioApiSocket</h1>
+
+
+	<div class="description">
+	
+<p>Kerio API Socket Class.</p>
+
+<p>This class implements basic methods used in HTTP communication.</p>
+
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>KerioApiSocket</span></b>			
+			 implements 
+				<a href="class-KerioApiSocketInterface.html"><span>KerioApiSocketInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		
+		
+
+				<b>Copyright:</b>
+				Copyright © 2012-2012 Kerio Technologies s.r.o.<br />
+				<b>License:</b>
+				<a href="http://www.kerio.com/developers/license/sdk-agreement">http://www.kerio.com/developers/license/sdk-agreement</a><br />
+				<b>Version:</b>
+				1.4.0.234<br />
+		<b>Located at</b> <a href="source-class-KerioApiSocket.html#17-288" title="Go to source code">class/KerioApiSocket.php</a><br />
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="KerioApiSocket" id="_KerioApiSocket">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_KerioApiSocket">#</a>
+			<code><a href="source-class-KerioApiSocket.html#87-108" title="Go to source code">KerioApiSocket</a>( <span>string <var>$hostname</var></span>, <span>integer <var>$port</var></span>, <span>integer <var>$timeout</var> = <span class="php-quote">''</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Class constructor.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Class constructor.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hostname</var></dt>
+						<dd><code>string</code><br>Hostname</dd>
+						<dt><var>$port</var></dt>
+						<dd><code>integer</code><br>Port</dd>
+						<dt><var>$timeout</var></dt>
+						<dd><code>integer</code><br>Timeout, optional</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br>True on success<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__destruct" id="___destruct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___destruct">#</a>
+			<code><a href="source-class-KerioApiSocket.html#110-118" title="Go to source code">__destruct</a>( )</code>
+
+			<div class="description short">
+				
+<p>Class desctructor.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Class desctructor.</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="open" id="_open">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_open">#</a>
+			<code><a href="source-class-KerioApiSocket.html#120-136" title="Go to source code">open</a>( )</code>
+
+			<div class="description short">
+				
+<p>Open socket to server.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Open socket to server.</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="close" id="_close">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_close">#</a>
+			<code><a href="source-class-KerioApiSocket.html#138-147" title="Go to source code">close</a>( )</code>
+
+			<div class="description short">
+				
+<p>Close socket to server.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Close socket to server.</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="send" id="_send">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_send">#</a>
+			<code><a href="source-class-KerioApiSocket.html#149-165" title="Go to source code">send</a>( <span>string <var>$data</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Send data to socket.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Send data to socket.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$data</var></dt>
+						<dd><code>string</code><br>Data to socket</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>Data from socket<br />
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+					<h4>See</h4>
+					<div class="list">
+							class/KerioApiSocketInterface::send()<br />
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-KerioApiSocketInterface.html#_send">KerioApiSocketInterface::send()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="read" id="_read">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_read">#</a>
+			<code><a href="source-class-KerioApiSocket.html#167-192" title="Go to source code">read</a>( )</code>
+
+			<div class="description short">
+				
+<p>Read data from socket.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Read data from socket.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>HTTP data from socket<br />
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code>KerioApiExceptions</code><br />
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setEncryption" id="_setEncryption">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setEncryption">#</a>
+			<code><a href="source-class-KerioApiSocket.html#211-219" title="Go to source code">setEncryption</a>( <span>boolen <var>$boolean</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Set connection encryption to ssl://</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set connection encryption to ssl://</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$boolean</var></dt>
+						<dd><code>boolen</code><br>True if ssl:// is used</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="checkConnection" id="_checkConnection">
+
+			<td class="attributes"><code>
+				final public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_checkConnection">#</a>
+			<code><a href="source-class-KerioApiSocket.html#221-237" title="Go to source code">checkConnection</a>( )</code>
+
+			<div class="description short">
+				
+<p>Check connection to server.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Check connection to server.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br>True on success<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="checkHost" id="_checkHost">
+
+			<td class="attributes"><code>
+				final public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_checkHost">#</a>
+			<code><a href="source-class-KerioApiSocket.html#239-247" title="Go to source code">checkHost</a>( )</code>
+
+			<div class="description short">
+				
+<p>Check if DNS host is valid.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Check if DNS host is valid.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br>True on success<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHeaders" id="_getHeaders">
+
+			<td class="attributes"><code>
+				final public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHeaders">#</a>
+			<code><a href="source-class-KerioApiSocket.html#249-257" title="Go to source code">getHeaders</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get headers.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get headers.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getBody" id="_getBody">
+
+			<td class="attributes"><code>
+				final public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getBody">#</a>
+			<code><a href="source-class-KerioApiSocket.html#259-267" title="Go to source code">getBody</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get body.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get body.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getErrorMessage" id="_getErrorMessage">
+
+			<td class="attributes"><code>
+				final public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getErrorMessage">#</a>
+			<code><a href="source-class-KerioApiSocket.html#269-277" title="Go to source code">getErrorMessage</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get socker error message.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get socker error message.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getErrorCode" id="_getErrorCode">
+
+			<td class="attributes"><code>
+				final public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getErrorCode">#</a>
+			<code><a href="source-class-KerioApiSocket.html#279-287" title="Go to source code">getErrorCode</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get socket error code.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get socket error code.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>integer</code><br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<table class="summary table table-bordered table-striped" id="constants">
+		<tr data-order="BUFFER_SIZE" id="BUFFER_SIZE">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name"><code>
+					<a href="source-class-KerioApiSocket.html#28-31" title="Go to source code"><b>BUFFER_SIZE</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-num">10240</span></code></td>
+			<td class="description"><div>
+				<a href="#BUFFER_SIZE" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Socket buffer size</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Socket buffer size</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Kerio APIs Client Library for PHP 1.4.0.234 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

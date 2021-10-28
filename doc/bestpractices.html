@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN"><html><head><meta http-equiv="Content-type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="resources/css/main.css"><link rel="shortcut icon" href="resources/images/favicon.ico"><title> Best Practices | Kerio APIs Client Library for PHP</title></head><body><div id="header" class="shadow-bottom ">Kerio APIs Client Library for PHP</div><div id="content"><span class="right-navigation"><a href="tutorial.html">&lt;&lt; Back</a></span><h1>Best Practices</h1>	<p>This document provides a collection of some useful tips.</p>
+
+	<h2>Out of Scope</h2>
+	<p>JSON-RPC protocol is not a subject of the kerio-api-php. The local copy of JSON-RPC 2.0 Specification can be found <a href="jsonrpc-specification.html">here</a>. User is supposed to know the Administration API for Kerio Connect as described in the official product documentation. Also any other Kerio API, e.g. WebMail is not subject of the kerio-api-php library.</p>
+
+	<h2>Eclipse IDE</h2>
+	<p>We recommend you <a target="_blank" class="external" href="http://www.eclipse.org/pdt">Eclipse for PHP Developers</a> which is free for use and cross-platform editor. Writing code with Eclipse is easier and more productive. It can autocomplete methods, check code syntax and much more. Of course, you can write code in any editor you are familiar with.</p>
+	<img alt="Eclipse IDE" title="Eclipse IDE" src="resources/images/eclipse.png"> 
+	
+	<h2>Debugging</h2>
+	<p>Debug messages are disabled by default. To enable displaying them, just call <span class="inline-note">setDebug(true)</span>. In your code you can enable or disable them as many times as you wish.</p>
+
+	<h2>Displaying Own Debug Message</h2>
+	<p>To display own debug message, call <span class="inline-note">debug('This message will be displayed if debug is true')</span>.</p>
+
+	<p class="prettyprint">
+	<code><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setDebug</span><span style="color: #007700">(</span><span style="color: #0000BB">TRUE</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">debug</span><span style="color: #007700">(</span><span style="color: #DD0000">'1:&nbsp;This&nbsp;message&nbsp;will&nbsp;be&nbsp;displayed&nbsp;if&nbsp;debug&nbsp;is&nbsp;true'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setDebug</span><span style="color: #007700">(</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">debug</span><span style="color: #007700">(</span><span style="color: #DD0000">'2:&nbsp;This&nbsp;message&nbsp;will&nbsp;be&nbsp;displayed&nbsp;if&nbsp;debug&nbsp;is&nbsp;true.'</span><span style="color: #007700">);</span></code>
+	</p>
+
+	<h2>Errors</h2>
+	<p>In general, all methods on which future code execution could depend should be caught by an exception. You should use <span class="inline-note">try catch block</span>.</p>
+
+	<h2>Catching Errors</h2>
+	<p class="prettyprint">
+	<code><span style="color: #007700">try&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sendRequest</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #DD0000">'Success'</span><span style="color: #007700">;<br>}<br>catch&nbsp;(</span><span style="color: #0000BB">KerioApiException&nbsp;$error</span><span style="color: #007700">)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #DD0000">'Some&nbsp;error&nbsp;occurred:&nbsp;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #0000BB">$error</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>}</span></code>
+	</p>
+
+	<h2>Logging</h2>
+	<p>Sometimes it is useful to log some messages also into a text file, usually a log file. For this purpose there is prepared a simple class <span class="inline-note">Logger</span> which is ready for quick and easy use. To start using it, include the <span class="inline-note">Logger.php</span>.</p>
+	<p class="note">A message is then written in the following format: hh:mm:ss (script name) your message</p>
+
+	<h2>Logging Example</h2>
+	<p class="prettyprint">
+	<code><span style="color: #007700">require_once(</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #0000BB">__FILE__</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'/class/Logger.php'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$log&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Logger</span><span style="color: #007700">();<br></span><span style="color: #0000BB">$log</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">open</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp/mylog.log'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$log</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">'Hello&nbsp;World.'</span><span style="color: #007700">);</span></code>
+	</p>
+
+	<h2><a id="access-control" class="selflink no-hover">Sample Username Access Control</a></h2>
+	<p>First you need to create an <span class="inline-note">.htaccess</span> authentication file. This file is the key to providing who has access to the files in the directory. Second file (<span class="inline-note">.htpasswd</span>) contains the usernames and passwords of those individuals who have authorized access to the directory and subdirectories.</p>
+	<p>Type <span class="inline-note">htpasswd -c .htpasswd username</span> to create the <span class="inline-note">.htpasswd</span> file and add <span class="inline-note">username</span> to list of authorized users. The program will initially prompt you for a password and then ask you to verify it.</p>
+
+	<p class="prettyprint">
+	AuthName "Secured Area"<br>
+	AuthUserFile /path/to/.htpasswd<br>
+	AuthType basic<br>
+	Require valid-user
+	</p>
+
+	<p class="note">Optionally you can use any online tool, e.g. <a class="external" target="_blank" href="http://www.htaccesstools.com/htpasswd-generator/">htpasswd generator</a>.</p>
+
+</div><div id="footer"><hr>Copyright © 2012-2012 Kerio Technologies s.r.o. | Version 1.4.0.234 | <a target="_blank" href="http://www.kerio.com/developers">www.kerio.com/developers</a></div></body></html>

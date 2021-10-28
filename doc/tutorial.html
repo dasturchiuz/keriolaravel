@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN"><html><head><meta http-equiv="Content-type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="resources/css/main.css"><link rel="shortcut icon" href="resources/images/favicon.ico"><title> Step by Step Tutorial | Kerio APIs Client Library for PHP</title></head><body><div id="header" class="shadow-bottom ">Kerio APIs Client Library for PHP</div><div id="content"><span class="right-navigation"><a href="../#code-examples">&lt;&lt; Back</a></span><h1>Step by Step Tutorial</h1>	<p>This tutorial will guide you through the kerio-api-php basics in a few simple steps - creating an instance, opening a connection, sending a request, parsing the response and closing the connection.</p>
+	<p class="info">You are a step ahead to become a programmer.</p>
+
+	<h2>Other Resources</h2>
+	<p>The tutorial and other attached examples use the Administration API for Kerio Connect. Product documentation with list of all interfaces, their methods, and data structures is available <a class="external" class="external" target="_blank" href="http://manuals.kerio.com/connect/api/en/reference/">online</a> or for <a class="external" target="_blank" href="http://download.kerio.com/dwn/kerio-connect-api-en.zip">download</a> in IDL - a language-neutral way.</p>
+	
+	<h2>1. Working Directory</h2>
+	<p>Prepare a working directory, e.g. <span class="inline-note">project</span> and copy the source files of kerio-api-php library placed in <span class="inline-note">src</span> folder there. You can also copy the <span class="inline-note">template.php</span> and save it as e.g. <span class="inline-note">myApplication.php</span>.</p>
+	<p>Your working directory may look like this:</p>
+	<p class="prettyprint">
+	project/<br>
+	└── <span class="inline-important">myApplication.php</span><br>
+	└── <span class="inline-important">src/</span><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;└── class/<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── KerioApiException.php<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── KerioApiInterface.php<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── KerioApi.php<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── KerioApiSocketInterface.php<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── KerioApiSocket.php<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;└── KerioConnectApi.php<br>
+	</p>
+	
+	<h2>2. Initialize kerio-api-php</h2>
+	<p>As the first step we need to load main class for Kerio Connect, the <span class="inline-note">KerioConnectApi.php</span>, create new instance and define the application. It is necessary to identify our application.</p>
+	<p class="prettyprint">
+	<code><span style="color: #007700">require_once(</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #0000BB">__FILE__</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'/src/KerioConnectApi.php'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$api&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">KerioConnectApi</span><span style="color: #007700">(</span><span style="color: #DD0000">'Sample&nbsp;Application'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Kerio&nbsp;Technologies&nbsp;s.r.o.'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'1.0'</span><span style="color: #007700">);</span></code>
+	</p>
+	<p>You will then get a better idea about applications using API by inspecting server's config.log and recognize applications from another administration activities.</p>
+	<img alt="Web Administration" title="Web Administration" src="resources/images/wam-log.png">
+	
+	<h2>3. Login</h2>
+	<p>Login includes entering server hostname and login credentials with administration rights.</p>
+	<p class="prettyprint">
+	<code><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">login</span><span style="color: #007700">(</span><span style="color: #DD0000">'mail.company.local'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'admin'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'secretpw'</span><span style="color: #007700">);</span></code>
+	</p>
+	<p class="note">It is also possible to use the read-only rights but please keep in mind that you cannot change any settings then.</p>
+	
+	<h2>4. Send a Request</h2>
+	<p>To send a request, call method <span class="inline-note">sendRequest()</span> and it will take care of all necessary things, such as creating a valid request and sending data to server.</p>
+	<p class="prettyprint">
+	<code><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sendRequest</span><span style="color: #007700">(</span><span style="color: #DD0000">'Session.whoAmI'</span><span style="color: #007700">);</span></code>
+	</p>
+	
+	<h2>5. Parse Response</h2>
+	<p>If the request is valid and the server has accepted it, you can print the complete response, e.g. using PHP method <a class="external" target="_blank" href="http://php.net/manual/en/function.print-r.php">print_r()</a>.</p>
+	<p class="prettyprint">
+	<code><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sendRequest</span><span style="color: #007700">(</span><span style="color: #DD0000">'Session.whoAmI'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$response</span><span style="color: #007700">);</span></code>
+	</p>
+	
+	<p>The output of the example above will be as follows:</p>
+	<p class="prettyprint">
+	<code><span style="color: #007700">Array(<br>&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">userDetails</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;Array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">id</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">keriodb://user/ea4d5326-98fe-4ce2-be4f-34078d3527a4/421f9931-88cd-4842-bea2-d13ba8f5ba37</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #007700">[</span><span style="color: #0000BB">domainId</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">keriodb://domain/ea4d5326-98fe-4ce2-be4f-34078d3527a4</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #007700">[</span><span style="color: #0000BB">loginName</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">Admin<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">fullName</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">Administrator<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">effectiveRole</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;Array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">userRole</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">FullAdmin<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">publicFolderRight</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">archiveFolderRight</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;)<br>)</span></code>
+	</p>
+	
+	<p>Now you can simply print just what you need.</p>
+	<p class="prettyprint">
+	<code><span style="color: #0000BB">$fullname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$response</span><span style="color: #007700">[</span><span style="color: #DD0000">'userDetails'</span><span style="color: #007700">][</span><span style="color: #DD0000">'fullName'</span><span style="color: #007700">];<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">'Success.&nbsp;You&nbsp;are&nbsp;logged&nbsp;in&nbsp;as&nbsp;&lt;b&gt;%s&lt;/b&gt;&nbsp;using&nbsp;the&nbsp;Administration&nbsp;API.'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$fullname</span><span style="color: #007700">);</span></code>
+	</p>
+		
+	<h2>6. Logout</h2>
+	<p>At the end, it is a good practice to logout and close connection to the server. You are done.</p>
+	<p class="prettyprint">
+	<code><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">logout</span><span style="color: #007700">();</span></code>
+	</p>
+	
+	<h2>Complete Code</h2>
+	<p class="prettyprint">
+	<code><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">require_once(</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #0000BB">__FILE__</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'/src/KerioConnectApi.php'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Set&nbsp;your&nbsp;Kerio&nbsp;Connect&nbsp;account<br />&nbsp;*/<br /></span><span style="color: #0000BB">$hostname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$password&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$api&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">KerioConnectApi</span><span style="color: #007700">(</span><span style="color: #DD0000">'Sample&nbsp;application'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Kerio&nbsp;Technologies'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'1.0'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Main&nbsp;application&nbsp;*/<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Login&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">login</span><span style="color: #007700">(</span><span style="color: #0000BB">$hostname</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$username</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;can&nbsp;continue&nbsp;writing&nbsp;code&nbsp;here<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;and&nbsp;add&nbsp;your&nbsp;custom&nbsp;code,&nbsp;e.g.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;print&nbsp;fooBar();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;Get&nbsp;who&nbsp;am&nbsp;I&nbsp;?&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sendRequest</span><span style="color: #007700">(</span><span style="color: #DD0000">'Session.whoAmI'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$fullname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$response</span><span style="color: #007700">[</span><span style="color: #DD0000">'userDetails'</span><span style="color: #007700">][</span><span style="color: #DD0000">'fullName'</span><span style="color: #007700">];<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">'Success.&nbsp;You&nbsp;are&nbsp;logged&nbsp;in&nbsp;as&nbsp;&lt;b&gt;%s&lt;/b&gt;&nbsp;using&nbsp;the&nbsp;Administration&nbsp;API.'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$fullname</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />}&nbsp;catch&nbsp;(</span><span style="color: #0000BB">KerioApiException&nbsp;$error</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Catch&nbsp;possible&nbsp;errors&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">print&nbsp;</span><span style="color: #0000BB">$error</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;Logout&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$session</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">logout</span><span style="color: #007700">();<br />}<br /></span></code>
+	</p>
+
+	<h2>Reference Documentation</h2>
+	<p>Here you can find all the <a href="reference/">reference documentation</a> generated by the kerio-api-php classes, methods and their parameters.</p>
+	
+	<h2>Best Practices</h2>
+	<p>You have completed this short step by step tutorial and maybe you could fit <a href="bestpractices.html">a few tips</a>.</p>
+
+</div><div id="footer"><hr>Copyright © 2012-2012 Kerio Technologies s.r.o. | Version 1.4.0.234 | <a target="_blank" href="http://www.kerio.com/developers">www.kerio.com/developers</a></div></body></html>

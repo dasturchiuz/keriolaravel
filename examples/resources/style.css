@@ -1,0 +1,67 @@
+/**
+ * Sample CSS.
+ *
+ * @copyright	Copyright &copy; 2012-2012 Kerio Technologies s.r.o.
+ */
+ 
+@import url(../../doc/resources/css/main.css);
+
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 20px;
+}
+
+/* EXAMPLES MENU */
+ul.nolist {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+li {
+	margin: 0;
+	padding: 2px 0;
+}
+
+li.separator {
+	border-top: 1px solid #CCC;
+}
+
+table.withBorder {
+    border-collapse: collapse;
+    background: #FFFFFF;
+    width: 100%;
+}
+
+table.withBorder, td.withBorder, th.withBorder {
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: top;
+    padding: 3px;
+}
+
+td {
+	border-bottom: 1px dotted #CCC;
+	margin: 0;
+}
+
+th {
+    width: 25%;
+    color: white;
+    background-color: #00A1E1;
+}
+
+th.control {
+    width: 10%;
+    color: white;
+    background-color: #E73A27;
+}
+
+/* EXAMPLES */
+
+.k-highlight {
+	font-weight: bold;
+	background-color: #FFFF00;
+}
+

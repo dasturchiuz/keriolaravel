@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class KerioConnectApi | Kerio APIs Client Library for PHP 1.4.0.234</title>
+
+	<script type="text/javascript" src="resources/combined.js?1876494839"></script>
+	<script type="text/javascript" src="elementlist.js?4118590145"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Kerio APIs Client Library for PHP 1.4.0.234</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" class="search-query" placeholder="Search" />
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-KerioApi.html">KerioApi</a></li>
+				<li><a href="class-KerioApiSocket.html">KerioApiSocket</a></li>
+				<li class="active"><a href="class-KerioConnectApi.html">KerioConnectApi</a></li>
+				<li><a href="class-KerioControlApi.html">KerioControlApi</a></li>
+				<li><a href="class-KerioDirectoryApi.html">KerioDirectoryApi</a></li>
+				<li><a href="class-KerioOperatorApi.html">KerioOperatorApi</a></li>
+				<li><a href="class-KerioWorkspaceApi.html">KerioWorkspaceApi</a></li>
+				<li><a href="class-SamepageApi.html">SamepageApi</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-KerioApiInterface.html">KerioApiInterface</a></li>
+				<li><a href="class-KerioApiSocketInterface.html">KerioApiSocketInterface</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-KerioApiException.html">KerioApiException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class KerioConnectApi</h1>
+
+
+	<div class="description">
+	
+<p>Administration API for Kerio Connect.</p>
+
+<p>This class implements product-specific methods and properties.</p>
+
+<p>Example:</p>
+
+<pre>
+<span class="xlang">&lt;?php</span>
+<span
+class="php-keyword1">require_once</span>(<span
+class="php-keyword2">dirname</span>(__FILE__) . <span
+class="php-quote">'/src/KerioConnectApi.php'</span>);
+
+<span
+class="php-var">$api</span> = <span
+class="php-keyword1">new</span> KerioConnectApi(<span
+class="php-quote">'Sample application'</span>, <span
+class="php-quote">'Company Ltd.'</span>, <span
+class="php-quote">'1.0'</span>);
+
+<span
+class="php-keyword1">try</span> {
+    <span
+class="php-var">$api</span>-&gt;login(<span
+class="php-quote">'mail.company.tld'</span>, <span
+class="php-quote">'admin'</span>, <span
+class="php-quote">'SecretPassword'</span>);
+    <span
+class="php-var">$api</span>-&gt;sendRequest(<span
+class="php-quote">'...'</span>);
+    <span
+class="php-var">$api</span>-&gt;logout();
+} <span
+class="php-keyword1">catch</span> (KerioApiException <span
+class="php-var">$error</span>) {
+    <span
+class="php-keyword1">print</span> <span
+class="php-var">$error</span>-&gt;getMessage();
+}
+<span
+class="xlang">?&gt;</span>
+</pre>
+
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+			<a href="class-KerioApi.html"><span>KerioApi</span></a>
+			
+			 implements 
+				<a href="class-KerioApiInterface.html"><span>KerioApiInterface</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>KerioConnectApi</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		
+		
+
+				<b>Copyright:</b>
+				Copyright © 2012-2012 Kerio Technologies s.r.o.<br />
+				<b>License:</b>
+				<a href="http://www.kerio.com/developers/license/sdk-agreement">http://www.kerio.com/developers/license/sdk-agreement</a><br />
+				<b>Version:</b>
+				1.4.0.234<br />
+		<b>Located at</b> <a href="source-class-KerioConnectApi.html#17-116" title="Go to source code">KerioConnectApi.php</a><br />
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-KerioConnectApi.html#55-66" title="Go to source code">__construct</a>( <span>string <var>$name</var></span>, <span>string <var>$vendor</var></span>, <span>string <var>$version</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Class constructor.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Class constructor.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd><code>string</code><br>Application name</dd>
+						<dt><var>$vendor</var></dt>
+						<dd><code>string</code><br>Application vendor</dd>
+						<dt><var>$version</var></dt>
+						<dd><code>string</code><br>Application version</dd>
+					</dl></div>
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+
+					<h4>Overrides</h4>
+					<div class="list"><code><a href="class-KerioApi.html#___construct">KerioApi::__construct</a></code></div>
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setComponentAdmin" id="_setComponentAdmin">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setComponentAdmin">#</a>
+			<code><a href="source-class-KerioConnectApi.html#68-76" title="Go to source code">setComponentAdmin</a>( )</code>
+
+			<div class="description short">
+				
+<p>Set component Web Administration.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set component Web Administration.</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setComponentClient" id="_setComponentClient">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setComponentClient">#</a>
+			<code><a href="source-class-KerioConnectApi.html#78-86" title="Go to source code">setComponentClient</a>( )</code>
+
+			<div class="description short">
+				
+<p>Set component Client aka WebMail.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set component Client aka WebMail.</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setComponentWebmail" id="_setComponentWebmail">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setComponentWebmail">#</a>
+			<code><a href="source-class-KerioConnectApi.html#88-98" title="Go to source code">setComponentWebmail</a>( )</code>
+
+			<div class="description short">
+				
+<p>Set component WebMail.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set component WebMail.</p>
+
+
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getConstants" id="_getConstants">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getConstants">#</a>
+			<code><a href="source-class-KerioConnectApi.html#100-115" title="Go to source code">getConstants</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get constants defined by product.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get constants defined by product.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>Array of constants<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+		<h3>Methods inherited from <a href="class-KerioApi.html#methods">KerioApi</a></h3>
+		<p class="elementList">
+			<code><a href="class-KerioApi.html#_checkHttpResponse">checkHttpResponse()</a></code>, 
+			<code><a href="class-KerioApi.html#_clean">clean()</a></code>, 
+			<code><a href="class-KerioApi.html#_debug">debug()</a></code>, 
+			<code><a href="class-KerioApi.html#_downloadFile">downloadFile()</a></code>, 
+			<code><a href="class-KerioApi.html#_getApiVersion">getApiVersion()</a></code>, 
+			<code><a href="class-KerioApi.html#_getApplication">getApplication()</a></code>, 
+			<code><a href="class-KerioApi.html#_getCookie">getCookie()</a></code>, 
+			<code><a href="class-KerioApi.html#_getDebug">getDebug()</a></code>, 
+			<code><a href="class-KerioApi.html#_getFile">getFile()</a></code>, 
+			<code><a href="class-KerioApi.html#_getHttpGetRequest">getHttpGetRequest()</a></code>, 
+			<code><a href="class-KerioApi.html#_getHttpPostRequest">getHttpPostRequest()</a></code>, 
+			<code><a href="class-KerioApi.html#_getHttpPutRequest">getHttpPutRequest()</a></code>, 
+			<code><a href="class-KerioApi.html#_getHttpRequest">getHttpRequest()</a></code>, 
+			<code><a href="class-KerioApi.html#_getJsonRpc">getJsonRpc()</a></code>, 
+			<code><a href="class-KerioApi.html#_getToken">getToken()</a></code>, 
+			<code><a href="class-KerioApi.html#_login">login()</a></code>, 
+			<code><a href="class-KerioApi.html#_logout">logout()</a></code>, 
+			<code><a href="class-KerioApi.html#_send">send()</a></code>, 
+			<code><a href="class-KerioApi.html#_sendRequest">sendRequest()</a></code>, 
+			<code><a href="class-KerioApi.html#_sendRequestJson">sendRequestJson()</a></code>, 
+			<code><a href="class-KerioApi.html#_setCookie">setCookie()</a></code>, 
+			<code><a href="class-KerioApi.html#_setDebug">setDebug()</a></code>, 
+			<code><a href="class-KerioApi.html#_setHostname">setHostname()</a></code>, 
+			<code><a href="class-KerioApi.html#_setJsonRpc">setJsonRpc()</a></code>, 
+			<code><a href="class-KerioApi.html#_setTimeout">setTimeout()</a></code>, 
+			<code><a href="class-KerioApi.html#_setToken">setToken()</a></code>, 
+			<code><a href="class-KerioApi.html#_uploadFile">uploadFile()</a></code>
+		</p>
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+
+		<h3>Constants inherited from <a href="class-KerioApi.html#constants">KerioApi</a></h3>
+		<p class="elementList">
+			<code><a href="class-KerioApi.html#CRLF"><b>CRLF</b></a></code>, 
+			<code><a href="class-KerioApi.html#HTTP_SERVER_OK"><b>HTTP_SERVER_OK</b></a></code>
+		</p>
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="jsonRpc" id="$jsonRpc">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioConnectApi.html#45-53" title="Go to source code"><var>$jsonRpc</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$jsonRpc" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Defines default product-specific JSON-RPC settings.</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Defines default product-specific JSON-RPC settings.</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+		<h3>Properties inherited from <a href="class-KerioApi.html#properties">KerioApi</a></h3>
+		<p class="elementList">
+			<code><a href="class-KerioApi.html#$application"><var>$application</var></a></code>, 
+			<code><a href="class-KerioApi.html#$cookies"><var>$cookies</var></a></code>, 
+			<code><a href="class-KerioApi.html#$headers"><var>$headers</var></a></code>, 
+			<code><a href="class-KerioApi.html#$hostname"><var>$hostname</var></a></code>, 
+			<code><a href="class-KerioApi.html#$name"><var>$name</var></a></code>, 
+			<code><a href="class-KerioApi.html#$token"><var>$token</var></a></code>, 
+			<code><a href="class-KerioApi.html#$version"><var>$version</var></a></code>
+		</p>
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Kerio APIs Client Library for PHP 1.4.0.234 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

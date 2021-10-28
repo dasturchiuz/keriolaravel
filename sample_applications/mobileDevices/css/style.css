@@ -1,0 +1,133 @@
+/**
+ * CSS definition for Display users using a mobile device.
+ *
+ * @copyright	Copyright &copy; 2012-2012 Kerio Technologies s.r.o.
+ */
+
+@CHARSET "UTF-8";
+
+body {
+	font: 13px/1.5 Verdana, "Geneva CE", lucida, sans-serif;
+	margin: 0;
+	padding: .5em 1em;
+	background: white;
+	color: #333;
+}
+
+h1 {
+	font-family: Trebuchet MS,"Geneva CE", lucida, sans-serif;
+	border-bottom: 2px solid #053368;
+	color: #053368;
+}
+
+h1.main {
+	background: url('../img/main.png') no-repeat 0px 0px;
+    padding: 6px 50px;
+}
+
+h1.cron {
+	background: url('../img/cron.png') no-repeat 0px 0px;
+    padding: 1px 40px;
+}
+
+h1.user {
+	background: url('../img/user.png') no-repeat 0px 0px;
+    padding: 1px 40px;
+
+}
+
+hr {
+	margin: 1em 0;
+	border: none;
+	border-top: 1px solid #CCC;
+	height: 0;
+}
+
+a {
+	color: #006aeb;
+	padding: 3px 1px;
+	text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+	background-color: #006aeb;
+	text-decoration: none;
+	color: white;
+}
+
+div.debug {
+	overflow: auto;
+	background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 1em;
+    padding: 10px;
+}
+
+div.error {
+    background-color: #FFDDDD;
+    border: 1px solid #FF8888;
+    margin-bottom: 1em;
+    padding: 10px;
+}
+
+div.success {
+    background-color: #E5EECC;
+    border: 1px solid #C3C3C3;
+    margin-bottom: 1em;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    background: #FFFFFF;
+    width: 100%;
+}
+
+table, td, th {
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: top;
+    padding: 3px;
+}
+
+th {
+    width: 25%;
+    color: white;
+    background-color: #00A1E1;
+}
+
+tr:hover {
+    background-color: #FFFF99;
+}
+
+td {
+    width: 25%;
+}
+
+table.search {
+    width: 510px;
+}
+
+th.search {
+    width: 50%;
+    color: white;
+    background-color: #708090;
+}
+
+td.search {
+    width: 50%;
+}
+
+table.update {
+    width: 330px;
+}
+
+th.update {
+    width: 50%;
+    color: white;
+    background-color: #708090;
+}
+
+td.update {
+    width: 50%;
+}

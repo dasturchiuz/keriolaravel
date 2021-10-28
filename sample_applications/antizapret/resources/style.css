@@ -1,0 +1,25 @@
+/**
+ * Sample CSS.
+ *
+ * @copyright	Copyright &copy; 2012-2012 Kerio Technologies s.r.o.
+ */
+
+@import url(../../../doc/resources/css/main.css);
+
+.legends {
+	display: table-cell;
+}
+
+fieldset {
+	border: 1px solid;
+}
+
+fieldset.form {
+	width: 180px;
+	height: 186px;
+}
+
+fieldset.backups {
+	margin-left: 10px;
+	width: auto;
+}

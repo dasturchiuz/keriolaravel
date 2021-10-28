@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class KerioApi | Kerio APIs Client Library for PHP 1.4.0.234</title>
+
+	<script type="text/javascript" src="resources/combined.js?1876494839"></script>
+	<script type="text/javascript" src="elementlist.js?4118590145"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Kerio APIs Client Library for PHP 1.4.0.234</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" class="search-query" placeholder="Search" />
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-KerioApi.html">KerioApi</a></li>
+				<li><a href="class-KerioApiSocket.html">KerioApiSocket</a></li>
+				<li><a href="class-KerioConnectApi.html">KerioConnectApi</a></li>
+				<li><a href="class-KerioControlApi.html">KerioControlApi</a></li>
+				<li><a href="class-KerioDirectoryApi.html">KerioDirectoryApi</a></li>
+				<li><a href="class-KerioOperatorApi.html">KerioOperatorApi</a></li>
+				<li><a href="class-KerioWorkspaceApi.html">KerioWorkspaceApi</a></li>
+				<li><a href="class-SamepageApi.html">SamepageApi</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-KerioApiInterface.html">KerioApiInterface</a></li>
+				<li><a href="class-KerioApiSocketInterface.html">KerioApiSocketInterface</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-KerioApiException.html">KerioApiException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class KerioApi</h1>
+
+
+	<div class="description">
+	
+<p>Kerio API Class.</p>
+
+<p>This is main class.</p>
+
+<p>Example:</p>
+
+<pre>
+<span class="xlang">&lt;?php</span>
+<span
+class="php-keyword1">require_once</span>(<span
+class="php-keyword2">dirname</span>(__FILE__) . <span
+class="php-quote">'/src/KerioApi.php'</span>);
+
+<span
+class="php-keyword1">class</span> MyApi extents KerioApi {
+
+    <span
+class="php-keyword1">public</span> <span
+class="php-keyword1">function</span> __contruct(<span
+class="php-var">$name</span>, <span class="php-var">$vendor</span>, <span
+class="php-var">$version</span>) {
+        parent::__construct(<span
+class="php-var">$name</span>, <span class="php-var">$vendor</span>, <span
+class="php-var">$version</span>);
+    }
+
+    <span
+class="php-keyword1">public</span> <span
+class="php-keyword1">function</span> getFoo() {
+        <span
+class="php-keyword1">return</span> <span
+class="php-var">$this</span>-&gt;sendRequest(<span
+class="php-quote">'...'</span>);
+    }
+}
+<span class="xlang">?&gt;</span>
+</pre>
+
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>KerioApi</span></b>			
+			 implements 
+				<a href="class-KerioApiInterface.html"><span>KerioApiInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h3>Direct known subclasses</h3>
+		<p class="elementList">
+			<code><a href="class-KerioConnectApi.html">KerioConnectApi</a></code>, 
+			<code><a href="class-KerioControlApi.html">KerioControlApi</a></code>, 
+			<code><a href="class-KerioDirectoryApi.html">KerioDirectoryApi</a></code>, 
+			<code><a href="class-KerioOperatorApi.html">KerioOperatorApi</a></code>, 
+			<code><a href="class-KerioWorkspaceApi.html">KerioWorkspaceApi</a></code>, 
+			<code><a href="class-SamepageApi.html">SamepageApi</a></code>
+		</p>
+	</div>
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		
+		
+
+				<b>Copyright:</b>
+				Copyright © 2012-2012 Kerio Technologies s.r.o.<br />
+				<b>License:</b>
+				<a href="http://www.kerio.com/developers/license/sdk-agreement">http://www.kerio.com/developers/license/sdk-agreement</a><br />
+				<b>Version:</b>
+				1.4.0.234<br />
+		<b>Located at</b> <a href="source-class-KerioApi.html#19-732" title="Go to source code">class/KerioApi.php</a><br />
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-KerioApi.html#130-143" title="Go to source code">__construct</a>( <span>string <var>$name</var></span>, <span>string <var>$vendor</var></span>, <span>string <var>$version</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Class contructor.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Class contructor.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd><code>string</code><br>Application name</dd>
+						<dt><var>$vendor</var></dt>
+						<dd><code>string</code><br>Application vendor</dd>
+						<dt><var>$version</var></dt>
+						<dd><code>string</code><br>Application version</dd>
+					</dl></div>
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-KerioApiInterface.html#___construct">KerioApiInterface::__construct()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getApplication" id="_getApplication">
+
+			<td class="attributes"><code>
+				final public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getApplication">#</a>
+			<code><a href="source-class-KerioApi.html#186-194" title="Go to source code">getApplication</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get application detail.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get application detail.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>Application details<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setJsonRpc" id="_setJsonRpc">
+
+			<td class="attributes"><code>
+				final public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setJsonRpc">#</a>
+			<code><a href="source-class-KerioApi.html#196-218" title="Go to source code">setJsonRpc</a>( <span>string <var>$version</var></span>, <span>integer <var>$port</var></span>, <span>string <var>$api</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Set JSON-RPC settings.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set JSON-RPC settings.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$version</var></dt>
+						<dd><code>string</code><br>JSON-RPC version</dd>
+						<dt><var>$port</var></dt>
+						<dd><code>integer</code><br>JSON-RPC port</dd>
+						<dt><var>$api</var></dt>
+						<dd><code>string</code><br>JSON-RPC URI</dd>
+					</dl></div>
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+					<h4>See</h4>
+					<div class="list">
+							class/KerioApiInterface::setJsonRpc()<br />
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-KerioApiInterface.html#_setJsonRpc">KerioApiInterface::setJsonRpc()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getJsonRpc" id="_getJsonRpc">
+
+			<td class="attributes"><code>
+				final public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getJsonRpc">#</a>
+			<code><a href="source-class-KerioApi.html#220-228" title="Go to source code">getJsonRpc</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get JSON-RPC settings.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get JSON-RPC settings.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>JSON-RPC settings<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setDebug" id="_setDebug">
+
+			<td class="attributes"><code>
+				final public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setDebug">#</a>
+			<code><a href="source-class-KerioApi.html#230-238" title="Go to source code">setDebug</a>( <span>boolean <var>$boolean</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Enable or disable of displaying debug messages.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enable or disable of displaying debug messages.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$boolean</var></dt>
+						<dd><code>boolean</code></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getDebug" id="_getDebug">
+
+			<td class="attributes"><code>
+				final public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getDebug">#</a>
+			<code><a href="source-class-KerioApi.html#240-248" title="Go to source code">getDebug</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get debug settings.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get debug settings.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="debug" id="_debug">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_debug">#</a>
+			<code><a href="source-class-KerioApi.html#250-261" title="Go to source code">debug</a>( <span>string <var>$message</var></span>, <span>string <var>$css</var> = <span class="php-quote">'debug'</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Display a message if debug is TRUE.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Display a message if debug is TRUE.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$message</var></dt>
+						<dd><code>string</code><br>Message</dd>
+						<dt><var>$css</var></dt>
+						<dd><code>string</code><br>CSS class</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>Message in &lt;div&gt; tags<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getApiVersion" id="_getApiVersion">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getApiVersion">#</a>
+			<code><a href="source-class-KerioApi.html#263-273" title="Go to source code">getApiVersion</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get product API version.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get product API version.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>integer</code><br>API version<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="login" id="_login">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_login">#</a>
+			<code><a href="source-class-KerioApi.html#275-309" title="Go to source code">login</a>( <span>string <var>$hostname</var></span>, <span>string <var>$username</var></span>, <span>string <var>$password</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Login method.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Login method.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hostname</var></dt>
+						<dd><code>string</code><br>Hostname</dd>
+						<dt><var>$username</var></dt>
+						<dd><code>string</code><br>Username</dd>
+						<dt><var>$password</var></dt>
+						<dd><code>string</code><br>Password</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>Result<br />
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+					<h4>See</h4>
+					<div class="list">
+							class/KerioApiInterface::login()<br />
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-KerioApiInterface.html#_login">KerioApiInterface::login()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="logout" id="_logout">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_logout">#</a>
+			<code><a href="source-class-KerioApi.html#311-323" title="Go to source code">logout</a>( )</code>
+
+			<div class="description short">
+				
+<p>Logout method.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Logout method.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>Result<br />
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							class/KerioApiInterface::logout()<br />
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-KerioApiInterface.html#_logout">KerioApiInterface::logout()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="clean" id="_clean">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_clean">#</a>
+			<code><a href="source-class-KerioApi.html#325-342" title="Go to source code">clean</a>( )</code>
+
+			<div class="description short">
+				
+<p>Clean data.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Clean data.</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHttpRequest" id="_getHttpRequest">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHttpRequest">#</a>
+			<code><a href="source-class-KerioApi.html#344-398" title="Go to source code">getHttpRequest</a>( <span>string <var>$method</var></span>, <span>string <var>$body</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Get full HTTP request.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get full HTTP request.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$method</var></dt>
+						<dd><code>string</code><br>HTTP method [POST,GET,PUT]</dd>
+						<dt><var>$body</var></dt>
+						<dd><code>string</code><br>HTTP body</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>HTTP request<br />
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHttpPostRequest" id="_getHttpPostRequest">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHttpPostRequest">#</a>
+			<code><a href="source-class-KerioApi.html#400-413" title="Go to source code">getHttpPostRequest</a>( <span>string <var>$data</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Get headers for POST request.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get headers for POST request.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$data</var></dt>
+						<dd><code>string</code><br>Request body</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>Request body<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHttpGetRequest" id="_getHttpGetRequest">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHttpGetRequest">#</a>
+			<code><a href="source-class-KerioApi.html#415-426" title="Go to source code">getHttpGetRequest</a>( <span>string <var>$data</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Get headers for GET request.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get headers for GET request.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$data</var></dt>
+						<dd><code>string</code><br>Request body</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>Request body<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHttpPutRequest" id="_getHttpPutRequest">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHttpPutRequest">#</a>
+			<code><a href="source-class-KerioApi.html#428-448" title="Go to source code">getHttpPutRequest</a>( <span>string <var>$data</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Get headers for PUT request.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get headers for PUT request.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$data</var></dt>
+						<dd><code>string</code><br>Request body</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>Request body<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sendRequest" id="_sendRequest">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sendRequest">#</a>
+			<code><a href="source-class-KerioApi.html#450-482" title="Go to source code">sendRequest</a>( <span>string <var>$method</var></span>, <span>array <var>$params</var> = <span class="php-quote">''</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Send request using method and its params.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Send request using method and its params.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$method</var></dt>
+						<dd><code>string</code><br>Interface.method</dd>
+						<dt><var>$params</var></dt>
+						<dd><code>array</code><br>Params of 'Interface.method'.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>Returns same type as param is, e.g. JSON if method is also JSON<br />
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							class/KerioApiInterface::sendRequest()<br />
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-KerioApiInterface.html#_sendRequest">KerioApiInterface::sendRequest()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sendRequestJson" id="_sendRequestJson">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sendRequestJson">#</a>
+			<code><a href="source-class-KerioApi.html#484-492" title="Go to source code">sendRequestJson</a>( <span>string <var>$json</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Send JSON request.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Send JSON request.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$json</var></dt>
+						<dd><code>string</code><br>JSON request</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>JSON response<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="send" id="_send">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_send">#</a>
+			<code><a href="source-class-KerioApi.html#494-564" title="Go to source code">send</a>( <span>string <var>$method</var></span>, <span>string <var>$data</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Send data to server.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Send data to server.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$method</var></dt>
+						<dd><code>string</code><br>Request method [POST,GET,PUT]</dd>
+						<dt><var>$data</var></dt>
+						<dd><code>string</code><br>Request body</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>Server response<br />
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="downloadFile" id="_downloadFile">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_downloadFile">#</a>
+			<code><a href="source-class-KerioApi.html#566-586" title="Go to source code">downloadFile</a>( <span>string <var>$url</var></span>, <span>string <var>$directory</var></span>, <span>string <var>$filename</var> = <span class="php-quote">''</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Get a file from server.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get a file from server.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$url</var></dt>
+						<dd><code>string</code><br>File url</dd>
+						<dt><var>$directory</var></dt>
+						<dd><code>string</code><br>Save directory</dd>
+						<dt><var>$filename</var></dt>
+						<dd><code>string</code><br>Save as, optional. Default is file.bin</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br>True on success<br />
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getFile" id="_getFile">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getFile">#</a>
+			<code><a href="source-class-KerioApi.html#588-596" title="Go to source code">getFile</a>( <span>string <var>$url</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Get a file from server.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get a file from server.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$url</var></dt>
+						<dd><code>string</code><br>File url</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>File content<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="uploadFile" id="_uploadFile">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_uploadFile">#</a>
+			<code><a href="source-class-KerioApi.html#598-619" title="Go to source code">uploadFile</a>( <span>string <var>$filename</var></span>, <span>integer <var>$id</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Put a file to server.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Put a file to server.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$filename</var></dt>
+						<dd><code>string</code><br>Absolute path to file</dd>
+						<dt><var>$id</var></dt>
+						<dd><code>integer</code><br>Reference ID where uploaded file belongs to, optional</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>Result<br />
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="checkHttpResponse" id="_checkHttpResponse">
+
+			<td class="attributes"><code>
+				 protected 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_checkHttpResponse">#</a>
+			<code><a href="source-class-KerioApi.html#621-638" title="Go to source code">checkHttpResponse</a>( <span>integer <var>$code</var></span>, <span>string <var>$headers</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Check HTTP/1.1 reponse header.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Check HTTP/1.1 reponse header.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$code</var></dt>
+						<dd><code>integer</code><br>Requested HTTP code</dd>
+						<dt><var>$headers</var></dt>
+						<dd><code>string</code><br>HTTP headers</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br>True if match<br />
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-KerioApiException.html">KerioApiException</a></code></code><br />
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setHostname" id="_setHostname">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setHostname">#</a>
+			<code><a href="source-class-KerioApi.html#640-652" title="Go to source code">setHostname</a>( <span>string <var>$hostname</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Set hostname.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set hostname.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hostname</var></dt>
+						<dd><code>string</code><br>Hostname</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setToken" id="_setToken">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setToken">#</a>
+			<code><a href="source-class-KerioApi.html#665-674" title="Go to source code">setToken</a>( <span>string <var>$token</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Set security Cross-Site Request Forgery X-Token.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set security Cross-Site Request Forgery X-Token.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$token</var></dt>
+						<dd><code>string</code><br>X-Token value</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getToken" id="_getToken">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getToken">#</a>
+			<code><a href="source-class-KerioApi.html#676-684" title="Go to source code">getToken</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get security Cross-Site Request Forgery X-Token.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get security Cross-Site Request Forgery X-Token.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>X-Token value<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setCookie" id="_setCookie">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setCookie">#</a>
+			<code><a href="source-class-KerioApi.html#686-694" title="Go to source code">setCookie</a>( <span>string <var>$cookies</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Set Cookies.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set Cookies.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$cookies</var></dt>
+						<dd><code>string</code><br>Cookies</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCookie" id="_getCookie">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCookie">#</a>
+			<code><a href="source-class-KerioApi.html#696-704" title="Go to source code">getCookie</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get Cookies.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get Cookies.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>Cookies<br />
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setTimeout" id="_setTimeout">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setTimeout">#</a>
+			<code><a href="source-class-KerioApi.html#723-731" title="Go to source code">setTimeout</a>( <span>integer <var>$timeout</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Set connection timeout.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set connection timeout.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$timeout</var></dt>
+						<dd><code>integer</code><br>Timeout in seconds</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<table class="summary table table-bordered table-striped" id="constants">
+		<tr data-order="CRLF" id="CRLF">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-KerioApi.html#48-51" title="Go to source code"><b>CRLF</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">&quot;\r\n&quot;</span></code></td>
+			<td class="description"><div>
+				<a href="#CRLF" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>End-Line format</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>End-Line format</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="HTTP_SERVER_OK" id="HTTP_SERVER_OK">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name"><code>
+					<a href="source-class-KerioApi.html#53-56" title="Go to source code"><b>HTTP_SERVER_OK</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-num">200</span></code></td>
+			<td class="description"><div>
+				<a href="#HTTP_SERVER_OK" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>HTTP server status</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>HTTP server status</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="name" id="$name">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioApi.html#58-62" title="Go to source code"><var>$name</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$name" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Library name</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Library name</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="version" id="$version">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioApi.html#64-68" title="Go to source code"><var>$version</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$version" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Library version</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Library version</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="hostname" id="$hostname">
+			<td class="attributes"><code>
+				protected  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioApi.html#82-86" title="Go to source code"><var>$hostname</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$hostname" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Hostname</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Hostname</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="token" id="$token">
+			<td class="attributes"><code>
+				protected  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioApi.html#88-92" title="Go to source code"><var>$token</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$token" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>X-Token</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>X-Token</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="cookies" id="$cookies">
+			<td class="attributes"><code>
+				protected  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioApi.html#94-98" title="Go to source code"><var>$cookies</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$cookies" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Cookies</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Cookies</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="application" id="$application">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioApi.html#100-104" title="Go to source code"><var>$application</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$application" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Application details</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Application details</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="jsonRpc" id="$jsonRpc">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioApi.html#106-110" title="Go to source code"><var>$jsonRpc</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$jsonRpc" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>JSON-RPC settings</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>JSON-RPC settings</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="headers" id="$headers">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-KerioApi.html#112-116" title="Go to source code"><var>$headers</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$headers" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>HTTP headers</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>HTTP headers</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Kerio APIs Client Library for PHP 1.4.0.234 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

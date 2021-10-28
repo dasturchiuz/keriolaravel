@@ -1,0 +1,58 @@
+/**
+ * Sample CSS.
+ *
+ * @copyright	Copyright &copy; 2012-2012 Kerio Technologies s.r.o.
+ */
+
+@import url(../../../doc/resources/css/main.css);
+
+#extension {
+    border: 1px solid #000000;
+	display: inline-table; 
+    margin: 0 10px 10px 0;
+	width: 210px;
+	height: 83px;
+}
+
+#content {
+	line-height: 1;
+}
+
+.username {
+	text-align: center;
+	border-bottom: 1px solid #000000;
+}
+
+.number {
+	padding: 0 0 0 3px;
+	font-size: 50px;
+	font-weight: bold;
+	width: 20%;
+}
+
+.call {
+	padding: 0px;
+}
+
+#legend td {
+    padding: 5px;
+    margin: 0;
+    width: 160px;
+    text-align: center;
+}
+
+.offline {
+    background-color: #C0C0C0;
+}
+
+.online {
+    background-color: lightGreen;
+}
+
+.dialing {
+    background-color: #F08E04;
+}
+
+.connected {
+    background-color: lightCoral;
+}
