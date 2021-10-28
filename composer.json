@@ -1,8 +1,15 @@
 {
     "name": "dasturchiuz/keriolaravel",
     "description": "Kerio control for laravel using",
-    "license": "Apache-2.0",
-    "type": "project",
+    "keywords": [
+        "Kerio control",
+        "laravel-kerio",
+        "php",
+        "php-kerio"
+    ],
+    "type": "library",
+    "homepage": "https://github.com/dasturchiuz/keriolaravel",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dilshod Tursimatov",
@@ -12,9 +19,17 @@
     "require": {
         "php": ">=7.0.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
     "autoload": {
         "psr-4": {
             "Dasturchiuz\\Keriolaravel\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
         }
     },
     "minimum-stability": "dev",
