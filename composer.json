@@ -1,7 +1,7 @@
 {
     "name": "dasturchiuz/keriolaravel",
     "description": "Kerio control for laravel using",
-    "minimum-stability": "dev",
+   
     "license": "Apache-2.0",
     "type": "project",
     "authors": [
@@ -12,13 +12,13 @@
     ],
     "require": {
         "php": ">=7.0.0"
-    },
-    "require-dev": {
-        "laravel/laravel": ">=5.5"
-    },
+    }
     "autoload": {
         "psr-4": {
             "Dasturchiuz\\Keriolaravel\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+    
 }
