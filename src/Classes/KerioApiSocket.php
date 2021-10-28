@@ -15,265 +15,266 @@ use Dasturchiuz\Keriolaravel\Classes\KerioApiSocketInterface;
  */
 class KerioApiSocket implements KerioApiSocketInterface {
 
-	/**
-	 * Socket buffer size
-	 */
-	const BUFFER_SIZE = 10240;
+    /**
+     * Socket buffer size
+     */
+    const BUFFER_SIZE = 10240;
 
-	/**
-	 * Socket handler
-	 * @var resource
-	 */
-	private $socketHandler = '';
+    /**
+     * Socket handler
+     * @var resource
+     */
+    private $socketHandler = '';
 
-	/**
-	 * Communication timeout
-	 * @var	integer
-	 */
-	private $timeout = 10;
+    /**
+     * Communication timeout
+     * @var	integer
+     */
+    private $timeout = 10;
 
-	/**
-	 * Server hostname
-	 * @var	string
-	 */
-	private $hostname = '';
+    /**
+     * Server hostname
+     * @var	string
+     */
+    private $hostname = '';
 
-	/**
-	 * Server port
-	 * @var	integer
-	 */
-	private $port = '';
+    /**
+     * Server port
+     * @var	integer
+     */
+    private $port = '';
 
-	/**
-	 * SSL encryption
-	 * @var string
-	 */
-	private $cipher = 'ssl://';
+    /**
+     * SSL encryption
+     * @var string
+     */
+    private $cipher = 'ssl://';
 
-	/**
-	 * Headers
-	 * @var	string
-	 */
-	private $headers = '';
+    /**
+     * Headers
+     * @var	string
+     */
+    private $headers = '';
 
-	/**
-	 * Body
-	 * @var	string
-	 */
-	private $body = '';
+    /**
+     * Body
+     * @var	string
+     */
+    private $body = '';
 
-	/**
-	 * Socker error message
-	 * @var	string
-	 */
-	private $errorMessage = '';
+    /**
+     * Socker error message
+     * @var	string
+     */
+    private $errorMessage = '';
 
-	/**
-	 * Socker error code
-	 * @var	integer
-	 */
-	private $errorCode = 0;
+    /**
+     * Socker error code
+     * @var	integer
+     */
+    private $errorCode = 0;
 
-	/**
-	 * Class constructor.
-	 *
-	 * @param	string	Hostname
-	 * @param	integer	Port
-	 * @param	integer	Timeout, optional
-	 * @return	boolean	True on success
-	 */
-	public function KerioApiSocket($hostname, $port, $timeout = '') {
-		/* Set host */
-		$this->hostname = $hostname;
-		$this->port = $port;
+    /**
+     * Class constructor.
+     *
+     * @param	string	Hostname
+     * @param	integer	Port
+     * @param	integer	Timeout, optional
+     * @return	boolean	True on success
+     */
+    function __construct($hostname, $port, $timeout = '') {
 
-		/* Set timeout */
-		if (is_int($timeout)) {
-			$this->timeout = $timeout;
-		}
+        /* Set host */
+        $this->hostname = $hostname;
+        $this->port = $port;
 
-		/* Open socket to server */
-		$this->open();
-		return ($this->socketHandler) ? TRUE : FALSE;
-	}
+        /* Set timeout */
+        if (is_int($timeout)) {
+            $this->timeout = $timeout;
+        }
 
-	/**
-	 * Class desctructor.
-	 *
-	 * @param	void
-	 * @return	void
-	 */
-	public function __destruct() {
-		$this->close();
-	}
+        /* Open socket to server */
+        $this->open();
+        return ($this->socketHandler) ? TRUE : FALSE;
+    }
 
-	/**
-	 * Open socket to server.
-	 *
-	 * @param	void
-	 * @return	void
-	 */
-	protected function open() {
-		$errstr = "";
-		$errno  = "";
-		$context = stream_context_create();
-		stream_context_set_option($context, "ssl", "allow_self_signed", true);
-		stream_context_set_option($context, "ssl", "verify_peer", false);
-		stream_context_set_option($context, "ssl", "verify_peer_name", false);
-		$this->socketHandler = @stream_socket_client($this->cipher . $this->hostname . ':' .  $this->port, $errno, $errstr, $this->timeout, STREAM_CLIENT_CONNECT, $context);
-		$this->errorCode = $errno;
-		$this->errorMessage = $errstr;
-	}
+    /**
+     * Class desctructor.
+     *
+     * @param	void
+     * @return	void
+     */
+    public function __destruct() {
+        $this->close();
+    }
 
-	/**
-	 * Close socket to server.
-	 *
-	 * @param	void
-	 * @return	void
-	 */
-	protected function close() {
-		@fclose($this->socketHandler);
-		unset($this->socketHandler);
-	}
+    /**
+     * Open socket to server.
+     *
+     * @param	void
+     * @return	void
+     */
+    protected function open() {
+        $errstr = "";
+        $errno  = "";
+        $context = stream_context_create();
+        stream_context_set_option($context, "ssl", "allow_self_signed", true);
+        stream_context_set_option($context, "ssl", "verify_peer", false);
+        stream_context_set_option($context, "ssl", "verify_peer_name", false);
+        $this->socketHandler = @stream_socket_client($this->cipher . $this->hostname . ':' .  $this->port, $errno, $errstr, $this->timeout, STREAM_CLIENT_CONNECT, $context);
+        $this->errorCode = $errno;
+        $this->errorMessage = $errstr;
+    }
 
-	/**
-	 * Send data to socket.
-	 *
-	 * @see class/KerioApiSocketInterface::send()
-	 * @param	string	Data to socket
-	 * @return	string	Data from socket
-	 * @throws	KerioApiException
-	 */
-	public function send($data) {
-		if ($this->checkConnection()) {
-			@fwrite($this->socketHandler, $data);
-			return $this->read();
-		}
-		else {
-			throw new KerioApiException(sprintf("Cannot connect to %s using port %d.", $this->hostname, $this->port));
-		}
-	}
+    /**
+     * Close socket to server.
+     *
+     * @param	void
+     * @return	void
+     */
+    protected function close() {
+        @fclose($this->socketHandler);
+        unset($this->socketHandler);
+    }
 
-	/**
-	 * Read data from socket.
-	 *
-	 * @param	void
-	 * @return	string	HTTP data from socket
-	 * @throws	KerioApiExceptions
-	 */
-	protected function read() {
-		if ($this->socketHandler) {
-			$response = '';
-			while (FALSE === feof($this->socketHandler)) {
-				$response .= fgets($this->socketHandler, self::BUFFER_SIZE);
-			}
-			
-			list($this->headers, $this->body) = explode("\r\n\r\n", $response);
-			
-			if (FALSE !== strpos(strtolower($this->headers), 'transfer-encoding: chunked')) {
-				$this->unchunkHttp();
-			}
-			
-			return $response;
-		}
-		else {
-			throw new KerioApiException('Cannot read data from server, connection timeout.');
-		}
-	}
+    /**
+     * Send data to socket.
+     *
+     * @see class/KerioApiSocketInterface::send()
+     * @param	string	Data to socket
+     * @return	string	Data from socket
+     * @throws	KerioApiException
+     */
+    public function send($data) {
+        if ($this->checkConnection()) {
+            @fwrite($this->socketHandler, $data);
+            return $this->read();
+        }
+        else {
+            throw new KerioApiException(sprintf("Cannot connect to %s using port %d.", $this->hostname, $this->port));
+        }
+    }
 
-	/**
-	 * Unchunk HTTP/1.1 body.
-	 * 
-	 * @param	void
-	 * @return	void
-	 */
-	private function unchunkHttp() {
-		$body = $this->body;
-		for ($new = ''; !empty($body); $str = trim($body)) {
-			$pos  = strpos($body, "\r\n");
-			$len  = hexdec(substr($body, 0, $pos));
-			$new .= substr($body, $pos + 2, $len);
-			$body = substr($body, $pos + 2 + $len);
-		}
-		$this->body = $new;
-	}
+    /**
+     * Read data from socket.
+     *
+     * @param	void
+     * @return	string	HTTP data from socket
+     * @throws	KerioApiExceptions
+     */
+    protected function read() {
+        if ($this->socketHandler) {
+            $response = '';
+            while (FALSE === feof($this->socketHandler)) {
+                $response .= fgets($this->socketHandler, self::BUFFER_SIZE);
+            }
 
-	/**
-	 * Set connection encryption to ssl://
-	 * 
-	 * @param	boolen	True if ssl:// is used
-	 * @return	void
-	 */
-	public function setEncryption($boolean) {
-		$this->cipher = ($boolean) ? 'ssl://' : '';
-	}
+            list($this->headers, $this->body) = explode("\r\n\r\n", $response);
 
-	/**
-	 * Check connection to server.
-	 *
-	 * @param	void
-	 * @return	boolean	True on success
-	 */
-	public final function checkConnection() {
-		if ($this->checkHost()) {
-			$socket = @fsockopen($this->hostname, $this->port, $errno, $errstr, $this->timeout);
-			$this->errorCode = $errno;
-			$this->errorMessage = $errstr;
-			return ($socket) ? TRUE : FALSE;
-		}
-		else {
-			return FALSE;
-		}
-	}
+            if (FALSE !== strpos(strtolower($this->headers), 'transfer-encoding: chunked')) {
+                $this->unchunkHttp();
+            }
 
-	/**
-	 * Check if DNS host is valid.
-	 *
-	 * @param 	void
-	 * @return	boolean	True on success
-	 */
-	public final function checkHost() {
-		return gethostbyname($this->hostname) ? TRUE : FALSE;
-	}
+            return $response;
+        }
+        else {
+            throw new KerioApiException('Cannot read data from server, connection timeout.');
+        }
+    }
 
-	/**
-	 * Get headers.
-	 * 
-	 * @param	void
-	 * @return	string
-	 */
-	public final function getHeaders() {
-		return $this->headers;
-	}
+    /**
+     * Unchunk HTTP/1.1 body.
+     *
+     * @param	void
+     * @return	void
+     */
+    private function unchunkHttp() {
+        $body = $this->body;
+        for ($new = ''; !empty($body); $str = trim($body)) {
+            $pos  = strpos($body, "\r\n");
+            $len  = hexdec(substr($body, 0, $pos));
+            $new .= substr($body, $pos + 2, $len);
+            $body = substr($body, $pos + 2 + $len);
+        }
+        $this->body = $new;
+    }
 
-	/**
-	 * Get body.
-	 *
-	 * @param	void
-	 * @return	string
-	 */
-	 public final function getBody() {
-		return $this->body;
-	}
+    /**
+     * Set connection encryption to ssl://
+     *
+     * @param	boolen	True if ssl:// is used
+     * @return	void
+     */
+    public function setEncryption($boolean) {
+        $this->cipher = ($boolean) ? 'ssl://' : '';
+    }
 
-	/**
-	 * Get socker error message.
-	 *
-	 * @param	void
-	 * @return	string
-	 */
-	public final function getErrorMessage() {
-		return $this->errorMessage;
-	}
+    /**
+     * Check connection to server.
+     *
+     * @param	void
+     * @return	boolean	True on success
+     */
+    public final function checkConnection() {
+        if ($this->checkHost()) {
+            $socket = @fsockopen($this->hostname, $this->port, $errno, $errstr, $this->timeout);
+            $this->errorCode = $errno;
+            $this->errorMessage = $errstr;
+            return ($socket) ? TRUE : FALSE;
+        }
+        else {
+            return FALSE;
+        }
+    }
 
-	/**
-	 * Get socket error code.
-	 *
-	 * @param	void
-	 * @return	integer
-	 */
-	public final function getErrorCode() {
-		return $this->errorCode;
-	}
+    /**
+     * Check if DNS host is valid.
+     *
+     * @param 	void
+     * @return	boolean	True on success
+     */
+    public final function checkHost() {
+        return gethostbyname($this->hostname) ? TRUE : FALSE;
+    }
+
+    /**
+     * Get headers.
+     *
+     * @param	void
+     * @return	string
+     */
+    public final function getHeaders() {
+        return $this->headers;
+    }
+
+    /**
+     * Get body.
+     *
+     * @param	void
+     * @return	string
+     */
+    public final function getBody() {
+        return $this->body;
+    }
+
+    /**
+     * Get socker error message.
+     *
+     * @param	void
+     * @return	string
+     */
+    public final function getErrorMessage() {
+        return $this->errorMessage;
+    }
+
+    /**
+     * Get socket error code.
+     *
+     * @param	void
+     * @return	integer
+     */
+    public final function getErrorCode() {
+        return $this->errorCode;
+    }
 }
 
