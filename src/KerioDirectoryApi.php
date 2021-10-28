@@ -12,7 +12,7 @@
  * Any changes may be overwritten by a new version.
  */
 
-require_once(dirname(__FILE__) . '/class/KerioApi.php');
+require_once(dirname(__FILE__) . '/Classes/KerioApi.php');
 
 /**
  * Administration API for Kerio Directory.
