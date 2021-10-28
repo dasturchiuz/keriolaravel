@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dasturchiuz\Keriolaravel\": "src/"
+            "Dasturchiuz\\Keriolaravel\\": "src/"
         }
     }
 }
